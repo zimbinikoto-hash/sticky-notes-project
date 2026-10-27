@@ -1,0 +1,23 @@
+
+{% extends "mbiracouture_app/base.html" %}
+
+{% block title %}
+    {% if note %}Edit Sticky Note{% else %}Create Sticky Note{% endif %}
+{% endblock %}
+
+{% block content %}
+    <h2>
+        {% if note %}Edit Sticky Note{% else %}Create a Sticky Note{% endif %}
+    </h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Save Note</button>
+    </form>
+
+    <p>
+        <a href="{% url 'sticky_note_list' %}">Back to Sticky Notes</a>
+    </p>
+{% endblock %}

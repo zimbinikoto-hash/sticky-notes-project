@@ -1,0 +1,30 @@
+
+{% extends "mbiracouture_app/base.html" %}
+
+{% block title %}Sticky Notes | Mbira Couture{% endblock %}
+
+{% block header %}My Sticky Notes{% endblock %}
+
+{% block content %}
+    <div class="notes-actions">
+        <a href="{% url 'sticky_note_create' %}" class="create-note-btn">
+            + Create Sticky Note
+        </a>
+    </div>
+    <section class="notes-container">
+        {% for note in notes %}
+            <article class="note">
+                <h2>{{ note.title }}</h2>
+                <p>{{ note.content }}</p>
+                <small>
+                    Created: {{ note.created_at|date:"d M Y, H:i" }}
+                <a href="{% url 'sticky_note_edit' pk=note.pk %}" class="edit-note-btn">
+                    Edit Note
+                </a>
+                </small>
+            </article>
+        {% empty %}
+            <p>No sticky notes yet.</p>
+        {% endfor %}
+    </section>
+{% endblock %}
