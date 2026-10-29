@@ -20,6 +20,9 @@
                     Created: {{ note.created_at|date:"d M Y, H:i" }}
                 <a href="{% url 'sticky_note_edit' pk=note.pk %}" class="edit-note-btn">
                     Edit Note
+                <a href="{% url 'sticky_note_delete' note.pk %}">
+                    Delete
+                </a>
                 </a>
                 </small>
             </article>

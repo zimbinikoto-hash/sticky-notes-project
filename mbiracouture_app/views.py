@@ -45,3 +45,17 @@ def sticky_note_edit(request, pk):
         "mbiracouture_app/sticky_note_form.html",
         {"form": form, "note": note},
     )
+
+
+def sticky_note_delete(request, pk):
+    note = get_object_or_404(StickyNote, pk=pk)
+
+    if request.method == "POST":
+        note.delete()
+        return redirect("sticky_note_list")
+
+    return render(
+        request,
+        "mbiracouture_app/sticky_note_confirm_delete.html",
+        {"note": note},
+    )
