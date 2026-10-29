@@ -4,7 +4,11 @@ from .models import StickyNote
 
 
 class StickyNoteForm(forms.ModelForm):
+    """Provide a form for creating and editing sticky notes."""
+
     class Meta:
+        """Define the model and fields used by the sticky note form."""
+
         model = StickyNote
         fields = ["title", "content"]
 

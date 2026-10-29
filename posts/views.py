@@ -37,8 +37,7 @@ def post_create(request):
     View to create a new post.
     :param request: HTTP request object.
     :return: Rendered template for creating a new post.
-    14
-    Copyright © 2025 HyperionDev. All rights reserved.
+    
     """
 
     if request.method == "POST":

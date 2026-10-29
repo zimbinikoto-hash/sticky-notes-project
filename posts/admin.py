@@ -1,13 +1,10 @@
 
 
-# Register your models here.
-# posts/admin.py
-from django.contrib import admin
-from .models import Post
-from .models import Author
+"""Register post-related models with the Django admin site."""
 
-# Register your models here.
-# Post model
+from django.contrib import admin
+from .models import Post, Author
+
 admin.site.register(Post)
-# Author model
 admin.site.register(Author)
+
