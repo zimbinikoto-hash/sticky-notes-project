@@ -117,11 +117,6 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-# Add static files directories
-STATICFILES_DIRS = [
-    BASE_DIR / "posts" / "static",
-
-]
 # Define the root directory for static files
 STATIC_ROOT = BASE_DIR / "static"
 
